@@ -135,7 +135,7 @@ def analyze_redundancy(csv_file: str, num_clusters: int = 5):
                         })
         
         # Save results
-        output_file = f"redundancy_analysis_{os.path.splitext(os.path.basename(csv_file))[0]}.csv"
+        output_file = f"{os.path.splitext(os.path.basename(csv_file))[0]}-redundancy_analysis.csv"
         pd.DataFrame(redundancy_results).to_csv(output_file, index=False)
         print(f"✓ Analysis complete! Found {len(redundancy_results)} potential redundancies")
         print(f"✓ Results saved to: {output_file}")
